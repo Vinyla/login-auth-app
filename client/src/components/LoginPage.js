@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { loginUser } from '../redux/actions/authActions';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const LoginPage = () => {
   const auth = useSelector((state) => state.auth);
@@ -36,9 +37,9 @@ const LoginPage = () => {
   }, [auth.isAuthenticated, authError, inputError]);
 
   return (
-    <div className='form'>
-      <h2>Login</h2>
-      <div>
+    <div className='container'>
+      <div className='form'>
+        <h2>Login</h2>
         <form action='submit'>
           <input
             onChange={onInputChange}
@@ -62,6 +63,14 @@ const LoginPage = () => {
             LOGIN
           </button>
         </form>
+        <div>
+          <p>
+            Don't have an account?&nbsp;
+            <Link style={{ textDecoration: 'none' }} to='/register'>
+              Register
+            </Link>
+          </p>
+        </div>
       </div>
     </div>
   );

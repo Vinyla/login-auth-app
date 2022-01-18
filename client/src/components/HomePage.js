@@ -18,25 +18,26 @@ const HomePage = () => {
   };
 
   return (
-    <div>
+    <div className='container'>
       {auth.isAuthenticated && (
-        <div className='welcome'>
-          <h2>Hello {user.name}. You are currently logged.</h2>
+        <div className='main-logged'>
+          <h2>Hello {user.name}.</h2>
+          <p>You are currently logged.</p>
           <button onClick={onUserLogout} className='logout'>
             Logout
           </button>
         </div>
       )}
       {!auth.isAuthenticated && (
-        <div className='container'>
+        <div className='main'>
           <div className='button-container'>
-            <h2>Have an account?</h2>
+            <h2>Login to your account</h2>
             <Link to='login'>
-              <button className='button-sign-in'>LOG IN</button>
+              <button className='button-sign-in'>LOGIN</button>
             </Link>
           </div>
           <div className='button-container'>
-            <h2>Don't have an account?</h2>
+            <h2>Register for account</h2>
             <Link to='register'>
               <button className='button-sign-up'>REGISTER</button>
             </Link>

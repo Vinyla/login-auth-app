@@ -40,9 +40,9 @@ const RegisterPage = () => {
   }, [auth.registered, authError, inputError]);
 
   return (
-    <div className='form'>
-      <h2>Sign up</h2>
-      <div>
+    <div className='container'>
+      <div className='form'>
+        <h2>Sign up</h2>
         <form>
           <input
             onChange={onInputChange}

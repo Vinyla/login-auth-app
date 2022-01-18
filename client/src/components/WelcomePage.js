@@ -15,9 +15,11 @@ const WelcomePage = () => {
   };
 
   return (
-    <div className='welcome'>
-      <h2>Welcome {user.name}</h2>
+    <div className='container'>
+      <div className='form'>
+      <h2>Welcome {user.name}!</h2>
       <button className='logout' onClick={onUserLogout}>Logout</button>
+      </div>
     </div>
   );
 };
